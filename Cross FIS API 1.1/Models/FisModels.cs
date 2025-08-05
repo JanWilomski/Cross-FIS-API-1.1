@@ -7,24 +7,24 @@ namespace Cross_FIS_API_1._1.Models
 {
     public class FisConnectionParameters
     {
-        public string IpAddress { get; set; }
+        public string IpAddress { get; set; } = string.Empty;
         public int Port { get; set; }
-        public string UserNumber { get; set; }
-        public string Password { get; set; }
-        public string CalledLogicalId { get; set; }
-        public string CallingLogicalId { get; set; }
+        public string UserNumber { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string CalledLogicalId { get; set; } = string.Empty;
+        public string CallingLogicalId { get; set; } = string.Empty;
     }
 
     public class OrderRequest
     {
-        public string Symbol { get; set; }
-        public string Side { get; set; } // 0=Buy, 1=Sell
-        public string Quantity { get; set; }
-        public string OrderType { get; set; } // L=Limit, M=Market, etc.
-        public string Price { get; set; }
-        public string Validity { get; set; } // J=Day, R=GTC, etc.
-        public string ClientReference { get; set; }
-        public string InternalReference { get; set; }
+        public string Symbol { get; set; } = string.Empty;
+        public string Side { get; set; } = "0"; // 0=Buy, 1=Sell
+        public string Quantity { get; set; } = string.Empty;
+        public string OrderType { get; set; } = "L"; // L=Limit, M=Market, etc.
+        public string Price { get; set; } = string.Empty;
+        public string Validity { get; set; } = "J"; // J=Day, R=GTC, etc.
+        public string ClientReference { get; set; } = string.Empty;
+        public string InternalReference { get; set; } = string.Empty;
     }
 
     public class FisMessage
@@ -32,8 +32,8 @@ namespace Cross_FIS_API_1._1.Models
         private readonly Dictionary<object, string> _fields = new();
         
         public int RequestNumber { get; set; }
-        public string CalledLogicalId { get; set; }
-        public string CallingLogicalId { get; set; }
+        public string CalledLogicalId { get; set; } = string.Empty;
+        public string CallingLogicalId { get; set; } = string.Empty;
         public string ApiVersion { get; set; } = " "; // Space for SLE V4
 
         public void AddField(object fieldId, string value)
@@ -137,18 +137,18 @@ namespace Cross_FIS_API_1._1.Services
 {
     public class FisMessageEventArgs : EventArgs
     {
-        public string MessageType { get; set; }
-        public string Message { get; set; }
+        public string MessageType { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
     }
 
     public class ConnectionStatusEventArgs : EventArgs
     {
         public bool IsConnected { get; set; }
-        public string StatusMessage { get; set; }
+        public string StatusMessage { get; set; } = string.Empty;
     }
 
     public class LogMessageEventArgs : EventArgs
     {
-        public string Message { get; set; }
+        public string Message { get; set; } = string.Empty;
     }
 }
