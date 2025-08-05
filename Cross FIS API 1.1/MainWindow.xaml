@@ -8,6 +8,11 @@
         Title="FIS API Trading Client" Height="600" Width="900"
         WindowStartupLocation="CenterScreen">
     
+    <!-- Resources muszą być zdefiniowane PRZED ich użyciem -->
+    <Window.Resources>
+        <local:BoolToColorConverter x:Key="BoolToColorConverter"/>
+    </Window.Resources>
+    
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
@@ -115,8 +120,4 @@
             </StatusBarItem>
         </StatusBar>
     </Grid>
-    
-    <Window.Resources>
-        <local:BoolToColorConverter x:Key="BoolToColorConverter"/>
-    </Window.Resources>
 </Window>
