@@ -7,6 +7,19 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon />
+        <StartupObject />
     </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Commands\" />
+        <Folder Include="Services\" />
+        <Folder Include="Models\" />
+        <Folder Include="Converters\" />
+    </ItemGroup>
 
 </Project>
